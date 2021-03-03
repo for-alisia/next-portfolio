@@ -1,15 +1,16 @@
 /** Dependencies */
-import React from 'react';
+import { useRouter } from 'next/router';
+import axios from 'axios';
 
 /** Components */
 import BaseLayout from '../components/layouts/base-layout.component';
 
-const Index = () => {
+const Portfolio = () => {
   return (
     <BaseLayout>
-      <h1>Index Page</h1>
+      <h1>Portfolio Page</h1>
     </BaseLayout>
   );
 };
 
-export default Index;
+export default Portfolio;
