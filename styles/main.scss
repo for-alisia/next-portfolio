@@ -1,0 +1,21 @@
+@import './shared/fonts';
+@import './index';
+@import './components/header';
+
+html,
+body {
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+.self-typed {
+  font-size: 26px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.absolute {
+  position: absolute;
+}

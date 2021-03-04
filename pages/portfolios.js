@@ -1,7 +1,9 @@
 /** Dependencies */
 import React from 'react';
 import axios from 'axios';
-import Link from 'next/link';
+//import Link from 'next/link';
+
+import { Link } from '../routes';
 
 /** Components */
 import BaseLayout from '../components/layouts/base-layout.component';
@@ -13,7 +15,7 @@ const Portfolios = ({ posts }) => {
       <ul>
         {posts.map(({ id, title }) => (
           <li key={id} style={{ fontSize: '20px' }}>
-            <Link as={`/portfolios/${id}`} href={`/portfolios/[id]`}>
+            <Link route={`/portfolios/${id}`}>
               <a>{title}</a>
             </Link>
           </li>

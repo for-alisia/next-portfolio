@@ -1,33 +1,32 @@
 /** Dependencies */
-import React from 'react';
-import Link from 'next/link';
+import React, { useState } from 'react';
+
+/** Components */
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
+import Link from './bs-navlink.component';
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
-    <>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-      <Link href="/blogs">
-        <a>Blogs</a>
-      </Link>
-      <Link href="/cv">
-        <a>CV</a>
-      </Link>
-      <Link href="/portfolios">
-        <a>Portfolios</a>
-      </Link>
-      <style jsx>
-        {`
-          a {
-            color: red;
-          }
-        `}
-      </style>
-    </>
+    <div>
+      <Navbar className="port-navbar port-default absolute" color="transparent" dark expand="md">
+        <NavbarBrand href="/" className="port-navbar-brand">
+          LENA RO
+        </NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="me-auto" navbar>
+            <Link href="/" text="Home" className="port-navbar-item" />
+            <Link href="/about" text="About" className="port-navbar-item" />
+            <Link href="/portfolios" text="Portfolio" className="port-navbar-item" />
+            <Link href="/blogs" text="Blog" className="port-navbar-item" />
+            <Link href="/cv" text="CV" className="port-navbar-item" />
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
   );
 };
 
